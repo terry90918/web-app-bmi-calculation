@@ -1,0 +1,33 @@
+doctype html
+html(lang='zh-TW')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        title BMI 計算
+        link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='css/style.css')
+    body
+        .wrap
+            header
+                .container
+                    .grid-3
+                        .grid-item.flex-center
+                            img(src='img/BMICLogo.png', alt='BMICLogo', style='width:117px;height:117px')
+                        .grid-item
+                            .form-group
+                                label(for='peopleHeight') 身高(m)
+                                input#peopleHeight.form-control(type='text', placeholder='請輸入身高')
+                            .form-group
+                                label(for='peopleWeight') 體重(kg)
+                                input#peopleWeight.form-control(type='text', placeholder='請輸入體重')
+                        .grid-item.flex-center
+                            a#calculatorBMI.btn-result(href='#') 看結果
+            main
+                .container
+                    h3.title BMI 紀錄
+                    ul.grid-listView
+            footer
+                .pic
+                    img(src='img/BMICLogo_black.png', alt='')
+        script(src='js/all.min.js')

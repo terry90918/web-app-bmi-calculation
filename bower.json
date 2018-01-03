@@ -1,0 +1,21 @@
+{
+  "name": "frontend-starter-kit",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "TienYiChen"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TpWILovePanda/frontend-starter-kit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

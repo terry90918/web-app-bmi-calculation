@@ -1,0 +1,256 @@
+$colorBlue: #31baf9;
+$colorGreen: #86d73f;
+$colorYellow: #ffd366;
+$colorOrigin: #ff6c03;
+$colorRed: #ff1200;
+
+$fz: 15px;
+$col-xs: "(max-width: 576px)";
+$col-sm: "(min-width: 576px) and (max-width: 767px)";
+$col-md: "(min-width: 768px) and (max-width: 991px)";
+$col-lg: "(min-width: 992px) and (max-width: 1199px)";
+$col-xl: "(min-width: 1200px)";
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    background: rgb(244, 245, 244);
+    font-size: $fz;
+    font-family: "微軟正黑體", Helvetica, sans-serif;
+    min-height: 100%;
+    padding-bottom: 6em;
+    margin: 0;
+}
+
+.wrap {
+    header {
+        width: 100%;
+        padding: 4% 0;
+        background-color: #424242;
+        .grid-item {
+            &.flex-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .form-group {
+            label {
+                color: $colorYellow;
+                font-weight: normal;
+                font-size: $fz + 3px;
+            }
+            input {
+                background: transparent;
+                border: 1px solid $colorYellow;
+                color: #fff;
+                font-size: $fz + 3px;
+                border-radius: 10px;
+            }
+        }
+        .btn-result {
+            text-decoration: none;
+            background: $colorYellow;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            color: #424242;
+            font-size: $fz + 9;
+            font-weight: 800;
+            transition: box-shadow 100ms;
+            &:hover {
+                box-shadow: 0 0 12px $colorYellow;
+            }
+            &.level {
+                position: relative;
+                background: transparent;
+                line-height: 105px;
+                border: 6px solid;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -4px;
+                    right: -4px;
+                    border: 4px solid #4a4a4a;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                }
+                &:after {
+                    content: "";
+                    background: url(../img/icons_loop.png) no-repeat;
+                    background-size: contain;
+                    width: 14px;
+                    height: 19px;
+                    position: absolute;
+                    bottom: 6px;
+                    right: 7px;
+                }
+                &.thin {
+                    border-color: $colorYellow;
+                    color: $colorYellow;
+                    &::before {
+                        background: $colorYellow;
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorYellow;
+                    }
+                }
+                &.thin {
+                    border-color: $colorBlue;
+                    color: $colorBlue;
+                    &::before {
+                        background: $colorBlue;
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorBlue;
+                    }
+                }
+                &.nice {
+                    border-color: $colorGreen;
+                    color: $colorGreen;
+                    &::before {
+                        background: $colorGreen;
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorGreen;
+                    }
+                }
+                &.tooHeavy {
+                    border-color: lighten($color: $colorOrigin, $amount: 10);
+                    color: lighten($color: $colorOrigin, $amount: 10);
+                    &::before {
+                        background: lighten($color: $colorOrigin, $amount: 10);
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorOrigin;
+                    }
+                }
+                &.aLittleFat {
+                    border-color: $colorOrigin;
+                    color: $colorOrigin;
+                    &::before {
+                        background: $colorOrigin;
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorOrigin;
+                    }
+                }
+                &.mediumFat {
+                    border-color: darken($color: $colorOrigin, $amount: 10);
+                    color: darken($color: $colorOrigin, $amount: 10);
+                    &::before {
+                        background: darken($color: $colorOrigin, $amount: 10);
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorOrigin;
+                    }
+                }
+                &.seriousObesity {
+                    border-color: $colorRed;
+                    color: $colorRed;
+                    &::before {
+                        background: $colorRed;
+                    }
+                    &:hover {
+                        box-shadow: 0 0 12px $colorRed;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        h3.title {
+            text-align: center;
+            font-size: $fz+ 9;
+            color: #424242;
+            margin-bottom: 20px;
+        }
+        .grid-listView {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+            @media #{$col-xs} {
+                width: calc(100% - 15px);
+            }
+            @media #{$col-sm} {
+                width: 100%;
+            }
+            @media #{$col-md} {
+                width: 100%;
+            }
+            li {
+                margin-bottom: 20px;
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr .5fr;
+                grid-gap: 12px 12px;
+                background: #fff;
+                border-left: 6px solid #fff; // box-shadow: 0 0 12px rgba(0,0,0,.2);
+                @media #{$col-xs} {
+                    grid-template-columns: 1fr 1fr;
+                }
+                &.thin {
+                    border-color: $colorBlue;
+                }
+                &.nice {
+                    border-color: $colorGreen;
+                }
+                &.tooHeavy {
+                    border-color: lighten($color: $colorOrigin, $amount: 10);
+                }
+                &.aLittleFat {
+                    border-color: $colorOrigin;
+                }
+                &.mediumFat {
+                    border-color: darken($color: $colorOrigin, $amount: 10) ;
+                }
+                &.seriousObesity {
+                    border-color: $colorRed;
+                }
+                .grid-item {
+                    padding: 20px 10px;
+                    font-size: $fz + 5px;
+                    display: flex;
+                    align-items: center;
+                    color: #4a4a4a;
+                    em {
+                        font-style: normal;
+                        font-size: $fz - 3px;
+                        color: #424242;
+                    }
+                    span {
+                        color: #4a4a4a;
+                        padding: 0 3px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: $colorYellow;
+        padding: 20px 0;
+        .pic {
+            text-align: center;
+        }
+    }
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 12px;
+    @media #{$col-xs} {
+        grid-template-columns: 1fr;
+    }
+}
